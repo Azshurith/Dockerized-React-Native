@@ -1,0 +1,17 @@
+# Docker
+.env
+
+# Project Ignore
+Node\node_modules\
+Node\.expo\
+Node\dist\
+Node\npm-debug.*
+Node\*.jks
+Node\*.p8
+Node\*.p12
+Node\*.key
+Node\*.mobileprovision
+Node\*.orig.*
+Node\web-build\
+Node\expo-env.d.ts
+Node\.DS_Store

@@ -1,0 +1,20 @@
+services:
+
+    node:
+        container_name: ${PROJECT_NAME}-node
+        image: ${PROJECT_NAME}-node:${PROJECT_NAME}-${PROJECT_VERSION}
+        build:
+            context: .
+            dockerfile: ${NODE_DOCKERFILE}/Dockerfile
+        ports:
+            - '${NODE_PORT_1}:${NODE_PORT_1}'
+            - '${NODE_PORT_2}:${NODE_PORT_2}'
+            - '${NODE_PORT_3}:${NODE_PORT_3}'
+        volumes:
+            - ${NODE_CLIENT_DIRECTORY}:${NODE_CLIENT_WORK_DIRECTORY}
+        environment:
+            - NODE_ENV=${PROJECT_ENV}
+        working_dir: ${NODE_CLIENT_WORK_DIRECTORY}
+        tty: true
+        healthcheck:
+            disable: true
